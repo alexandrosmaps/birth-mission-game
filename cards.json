@@ -1,0 +1,170 @@
+[
+  {
+    "id": "card1",
+    "title": "Arrival at the Hospital",
+    "text": "You and your partner have just arrived at the maternity ward. The nurse asks if you remembered to bring the hospital paperwork.",
+    "answers": [
+      {
+        "text": "Calmly check your bag and hand over the paperwork.",
+        "outcome": "continue",
+        "reward": {
+          "item": "nurse_trust"
+        }
+      },
+      {
+        "text": "Panic and insist the nurse should have it already.",
+        "outcome": "gameover"
+      }
+    ]
+  },
+  {
+    "id": "card2",
+    "title": "Supporting Breathing",
+    "text": "Your partner is starting to feel stronger contractions. The nurse asks you to help guide breathing.",
+    "answers": [
+      {
+        "text": "Gently follow the nurse’s demonstration and encourage slow breaths.",
+        "outcome": "continue",
+        "reward": {
+          "item": "breathing_technique_knowledge"
+        }
+      },
+      {
+        "text": "Tell your partner to 'just relax' without offering real support.",
+        "outcome": "gameover"
+      }
+    ]
+  },
+  {
+    "id": "card3",
+    "title": "Communicating with the Nurse",
+    "text": "Your partner asks you to notify the nurse that contractions are closer together.",
+    "answers": [
+      {
+        "text": "Go politely and clearly explain the contraction timing to the nurse.",
+        "outcome": "continue",
+        "reward": {
+          "item": "nurse_communication_skill"
+        }
+      },
+      {
+        "text": "Yell down the hall for the nurse to hurry.",
+        "outcome": "gameover"
+      }
+    ]
+  },
+  {
+    "id": "card4",
+    "title": "Comfort Options",
+    "text": "Your partner seems tense and uncomfortable. The nurse offers several comfort items.",
+    "answers": [
+      {
+        "text": "Ask your partner whether they'd like a warm blanket or back rub.",
+        "outcome": "continue",
+        "reward": {
+          "item": "comfort_item"
+        }
+      },
+      {
+        "text": "Decide for them and push a position they don't want.",
+        "outcome": "gameover"
+      }
+    ]
+  },
+  {
+    "id": "card5",
+    "title": "Contraction Timing",
+    "text": "The nurse asks you to keep track of contraction intervals.",
+    "answers": [
+      {
+        "text": "Use your phone timer to log times carefully.",
+        "outcome": "continue",
+        "reward": {
+          "item": "contraction_timing_knowledge"
+        }
+      },
+      {
+        "text": "Guess the timing and say 'I think they're close enough.'",
+        "outcome": "gameover"
+      }
+    ]
+  },
+  {
+    "id": "card6",
+    "title": "Pain Relief Discussion",
+    "text": "Your partner is considering an epidural. They ask what you think.",
+    "answers": [
+      {
+        "text": "Stay supportive and reassure that any choice they make is valid.",
+        "outcome": "continue",
+        "reward": {
+          "item": "emotional_support_skill"
+        }
+      },
+      {
+        "text": "Make the decision for them because 'you know what's best.'",
+        "outcome": "gameover"
+      }
+    ]
+  },
+  {
+    "id": "card7",
+    "title": "Encouraging Through Labor",
+    "text": "Your partner is exhausted and needs encouragement while pushing.",
+    "answers": [
+      {
+        "text": "Offer steady words of strength and hold their hand.",
+        "outcome": "continue",
+        "reward": {
+          "item": "partner_support_presence"
+        }
+      },
+      {
+        "text": "Tell them they're taking too long and they need to push harder.",
+        "outcome": "gameover"
+      }
+    ]
+  },
+  {
+    "id": "card8",
+    "title": "Nurse Request",
+    "text": "The nurse asks you to grab some ice chips from the nearby station.",
+    "answers": [
+      {
+        "text": "Quickly retrieve the ice chips and bring them back.",
+        "outcome": "continue",
+        "reward": {
+          "item": "ice_chips"
+        }
+      },
+      {
+        "text": "Refuse because you're 'too stressed right now.'",
+        "outcome": "gameover"
+      }
+    ]
+  },
+  {
+    "id": "card9",
+    "title": "Final Delivery Support",
+    "text": "It’s the final moments. Your partner needs focused encouragement and calm presence.",
+    "answers": [
+      {
+        "text": "Stay close, maintain eye contact, and reinforce their strength.",
+        "outcome": "continue",
+        "reward": {
+          "item": "delivery_focus_skill"
+        }
+      },
+      {
+        "text": "Start filming without asking and distract everyone.",
+        "outcome": "gameover"
+      }
+    ]
+  },
+  {
+    "id": "gameover",
+    "title": "Game Over",
+    "text": "Sorry you are kindly asked to leave the birth room",
+    "answers": []
+  }
+]
