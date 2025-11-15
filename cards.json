@@ -99,7 +99,7 @@
         "outcome": "continue"
       },
       {
-        "text": "L'equip mèdic et diu que el cap està col·locat d'una manera que no surt. Així que us indiquen que el més sa seria fer una cessària per evitar problemes. Us ho praleu amb la teva parella que ja la veus fosa i que et demana que si, que fem cessària.",
+        "text": "L'equip mèdic et diu que el cap està col·locat d'una manera que no surt. Així que us indiquen que el més sa seria fer una cessària per evitar problemes. Us ho parleu amb la teva parella que ja la veus fosa i que et demana que si, que fem cessària.",
         "outcome": "continue"
       }
     ]
@@ -142,7 +142,7 @@
   {
     "id": "gameover6",
     "title": "❌ Game Over per síndrome de 324.",
-    "text": "Mentre responies missatges ha nascut el teu fill, així pim pam sense avisar. Has sortir un moment de la sala de parts perquè no tenies prou cobertura i en tornar ja t'has trobat a la teva parella donant el pit per primera vegada. Família i amics, tranquis que quan s'hagi d'avisar s'avisarà.",
+    "text": "Mentre responies missatges ha nascut el teu fill, així pim pam sense avisar. Has sortit un moment de la sala de parts perquè no tenies prou cobertura i en tornar ja t'has trobat a la teva parella donant el pit per primera vegada. Família i amics, tranquis que quan s'hagi d'avisar s'avisarà.",
     "gif_url": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmp0OW42MGlwZTgzMWt2amN5cWZnMnRjYnc0YTd3N3Z4M2Z0NjBobiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/A45LCRGb84xTG/giphy.gif",
     "answers": []
   }
