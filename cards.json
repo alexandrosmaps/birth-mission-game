@@ -1,25 +1,22 @@
 [
   {
     "id": "card1",
-    "title": "Crec que he trencat aigües...",
-    "text": "Bum. La frase. I just ara que estaveu entrant a l'Abacus a comprar aquell llibre que acaba de sortir del teu autor preferit. La mires i efectivament la secció de jocs de taula ara sembla la secció de natació sincronitzada.",
+    "title": "💧Crec que he trencat aigües...",
+    "text": "Bum. La frase. I just ara que estàveu entrant a l'Abacus a comprar aquell llibre que acaba de sortir del teu autor preferit. La mires i efectivament la secció de jocs de taula ara sembla la secció de natació sincronitzada.",
     "answers": [
       {
-        "text": "Amb calma i tranquil·litat aneu a casa i agafeu la bossa que ja estava preparada amb roba de recanvi i la robeta de bebé. Mentre ella es dutxa truques el número del taxista que ja estava avisat de feia setmanes i et diu que en 10 minuts està sota de casa.",
-        "outcome": "continue",
-        "reward": {
-          "item": "Calma en mig de les onades"
-        }
+        "text": "Amb calma i tranquil·litat aneu cap a casa i agafeu la bossa que ja estava preparada amb roba de recanvi i la robeta de bebé. Mentre ella es dutxa truques al telèfon del taxista que ja estava avisat de feia setmanes i et diu que en 10 minuts està sota de casa.",
+        "outcome": "continue"
       },
       {
-        "text": "Entres en pànic fort. Comences a cridar 'Ha roto aguas! !¿Hay algun doctor en el Abacus?! Comences a hiperventilar mentre la teva parella t'intenta calmar i acabes desmaiant-te'",
+        "text": "Entres en pànic fort. Comences a cridar 'Ha roto aguas! !¿Hay algun doctor en el Abacus?! Comences a hiperventilar mentre la teva parella t'intenta calmar i acabes desmaiant-te",
         "outcome": "gameover1"
       }
     ]
   },
   {
     "id": "card2",
-    "title": "Arribada a l'hospital",
+    "title": "Arribada a l'hospital 🚕",
     "text": "La teva parella i tu arribeu a l'hospital i a recepció et demanen la targeta sanitària, el pla de part i els papers genèrics que calen. Agafes la bossa i...",
     "answers": [
       {
@@ -27,17 +24,14 @@
         "outcome": "gameover2"
       },
       {
-        "text": "Molt amablament dones els papers que tens ordenats alfabèticament i cromàticament a la carpeta. Li fas una mica de burocràciaSplaining a la recepcionista explicant-li quins papers t'ha de tornar firmats i quins s'ha de quedar. Tot és meravellós i entreu a l'hospital!",
-        "outcome": "continue",
-        "reward": {
-          "item": "breathing_technique_knowledge"
-        }
+        "text": "Molt amablement dones els papers que tens ordenats alfabèticament i cromàticament a la carpeta. Li fas una mica de burocràciaSplaining a la recepcionista explicant-li quins papers t'ha de tornar firmats i quins s'ha de quedar. Tot és meravellós i entreu a l'hospital!",
+        "outcome": "continue"
       }
     ]
   },
   {
     "id": "card3",
-    "title": "Tacte vaginal!",
+    "title": "Tacte vaginal! 🫵🏼",
     "text": "La llevadora li fa un primer tacte a la teva parella. Mala sort diu que encara no ha dilatat prou i que us heu de quedar a fora esperant o anar a casa, fer-vos una dutxa i tornar. La teva parella et mira suplicant, diu que té contraccions molt fortes i amb prou feines es pot moure.",
     "answers": [
       {
@@ -52,7 +46,7 @@
   },
   {
     "id": "card4",
-    "title": "Suport emocional i massatges!",
+    "title": "🫰🏼Suport emocional i massatges!🫶🏼",
     "text": "Us fan entrar  a la sala de parts i les contraccions es fan més intenses. La teva parella et demana que posis en pràctica els aprenentatges!",
     "answers": [
       {
@@ -67,7 +61,7 @@
   },
   {
     "id": "card5",
-    "title": "Epidural o no epidural, esa es la cuestión",
+    "title": "💉Epidural o no epidural, esa es la cuestión",
     "text": "Al pla de part havíeu posat que res d'epidural però la teva parella et diu que les contraccions li fan molt de mal i que ara sí que la vol.",
     "answers": [
       {
@@ -82,7 +76,7 @@
   },
   {
     "id": "card6",
-    "title": "Informem a la família?",
+    "title": "Informem a la família? ☎️",
     "text": "Massa whatsapps sense resposta fan que la família et comenci a trucar. El mòbil de la teva parella està apagat i tu ets la 'centralita'.",
     "answers": [
       {
@@ -97,7 +91,7 @@
   },
   {
     "id": "card7",
-    "title": "Les rondes d'esponderaments (aka pujos en espanyol)",
+    "title": "💪🏼 Les rondes d'esponderaments (aka pujos en espanyol)",
     "text": "La cosa ja està intensa i tot està en marxa. Cada cop l'equip mèdic ve més sovint a fer tactes i demanen a la teva parella que comenci a fer força.",
     "answers": [
       {
