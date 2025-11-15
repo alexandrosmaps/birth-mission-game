@@ -99,17 +99,26 @@ function renderCard(card) {
     choicesContainerEl.style.display = "block";
   }
 
-  // Render answer choices
-  card.answers.forEach((answer, index) => {
+  // Add a small delay before rendering new choices to prevent touch bleed-through
+  setTimeout(() => {
+    renderChoices(card.answers);
+  }, 150);
+
+  // Show card
+  showCard();
+}
+
+/**
+ * Render answer choices
+ */
+function renderChoices(answers) {
+  answers.forEach((answer, index) => {
     const button = document.createElement("button");
     button.className = "choice-button";
     button.onclick = () => handleChoice(answer);
     button.textContent = answer.text;
     choicesEl.appendChild(button);
   });
-
-  // Show card
-  showCard();
 }
 
 /**
