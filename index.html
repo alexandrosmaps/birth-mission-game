@@ -3,386 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Choose Your Own Adventure</title>
+    <title>Missió: /El Part</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
-      /* Reset and Base Styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
-        min-height: 100vh;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 1rem;
-      }
-
-      /* Container */
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      /* Header */
-      .header {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-
-      .header h1 {
-        font-size: 2.5rem;
-        color: white;
-        margin-bottom: 0.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-      }
-
-      .header p {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1.1rem;
-      }
-
-      /* Loading State */
-      .loading {
-        text-align: center;
-        color: white;
-        font-size: 1.5rem;
-        padding: 4rem;
-      }
-
-      /* Error State */
-      .error-box {
-        background: rgba(220, 38, 38, 0.3);
-        border: 2px solid rgb(239, 68, 68);
-        border-radius: 0.75rem;
-        padding: 2rem;
-        text-align: center;
-        max-width: 500px;
-        margin: 0 auto;
-      }
-
-      .error-box h2 {
-        color: white;
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
-      }
-
-      .error-box p {
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 1.5rem;
-      }
-
-      /* Inventory */
-      .inventory {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        border-radius: 0.75rem;
-        padding: 1.25rem;
-        margin-bottom: 1.5rem;
-        display: none;
-      }
-
-      .inventory.visible {
-        display: block;
-      }
-
-      .inventory-header {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: white;
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-      }
-
-      .inventory-icon {
-        width: 20px;
-        height: 20px;
-      }
-
-      .inventory-items {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      .inventory-item {
-        background: rgba(251, 191, 36, 0.2);
-        border: 1px solid rgba(251, 191, 36, 0.5);
-        color: rgba(255, 255, 255, 0.95);
-        padding: 0.375rem 0.875rem;
-        border-radius: 1rem;
-        font-size: 0.875rem;
-      }
-
-      /* Card Container */
-      .card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-radius: 1rem;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-        display: none;
-      }
-
-      .card.visible {
-        display: block;
-        animation: fadeIn 0.5s ease-in;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Card Header */
-      .card-header {
-        background: linear-gradient(135deg, #5b63d3 0%, #7c3aed 100%);
-        padding: 2rem;
-      }
-
-      .card-title {
-        font-size: 2rem;
-        color: white;
-        font-weight: 700;
-      }
-
-      /* Card Content */
-      .card-content {
-        padding: 2rem;
-      }
-
-      .card-text {
-        color: #374151;
-        font-size: 1.125rem;
-        line-height: 1.75;
-        margin-bottom: 2rem;
-      }
-
-      /* Choices Section */
-      .choices-label {
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: #6b7280;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-bottom: 1rem;
-      }
-
-      .choices {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      .choice-button {
+      /* Progress bar styles */
+      .progress-bar-container {
         width: 100%;
-        text-align: left;
-        background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
-        border: 2px solid #a5b4fc;
-        border-radius: 0.75rem;
-        padding: 1.25rem;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-size: 1rem;
-        color: #1f2937;
-        font-weight: 500;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 0 20px;
       }
 
-      .choice-button:hover {
-        background: linear-gradient(135deg, #dbeafe 0%, #c7d2fe 100%);
-        border-color: #6366f1;
-        transform: scale(1.02);
-        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+      .progress-bar-wrapper {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        height: 30px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
       }
 
-      .choice-button:active {
-        transform: scale(0.98);
-      }
-
-      .choice-reward {
-        color: #d97706;
-        font-size: 0.875rem;
-        margin-left: 0.5rem;
-      }
-
-      /* End Game Screen */
-      .end-screen {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-radius: 1rem;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        padding: 3rem;
-        text-align: center;
-        display: none;
-      }
-
-      .end-screen.visible {
-        display: block;
-        animation: fadeIn 0.5s ease-in;
-      }
-
-      .end-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-      }
-
-      .end-title.victory {
-        color: #059669;
-      }
-
-      .end-title.gameover {
-        color: #dc2626;
-      }
-
-      .end-message {
-        color: #374151;
-        font-size: 1.25rem;
-        line-height: 1.75;
-        margin-bottom: 2rem;
-      }
-
-      .end-inventory {
-        margin-bottom: 2rem;
-      }
-
-      .end-inventory-label {
-        color: #6b7280;
-        margin-bottom: 0.75rem;
-      }
-
-      .end-inventory-items {
+      .progress-bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #6fea66 0%, #4ba24e 100%);
+        transition: width 0.5s ease;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
-      }
-
-      .end-inventory-item {
-        background: #dbeafe;
-        color: #1e40af;
-        padding: 0.5rem 1rem;
-        border-radius: 1rem;
-        font-size: 0.875rem;
-        font-weight: 500;
-      }
-
-      /* Buttons */
-      .btn-primary {
-        background: #6366f1;
-        color: white;
-        border: none;
-        padding: 0.875rem 2rem;
-        border-radius: 0.75rem;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-        display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
+        justify-content: flex-end;
+        padding-right: 10px;
+        position: relative;
       }
 
-      .btn-primary:hover {
-        background: #4f46e5;
-        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
-        transform: translateY(-2px);
-      }
-
-      .btn-primary:active {
-        transform: translateY(0);
-      }
-
-      .restart-footer {
-        text-align: center;
-        margin-top: 1.5rem;
-      }
-
-      .btn-restart-small {
-        color: rgba(255, 255, 255, 0.7);
-        background: transparent;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        font-size: 0.875rem;
-        cursor: pointer;
-        transition: color 0.2s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .btn-restart-small:hover {
+      .progress-bar-text {
         color: white;
+        font-weight: bold;
+        font-size: 14px;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        right: 10px;
+        z-index: 1;
       }
 
-      .icon {
-        width: 20px;
-        height: 20px;
+      .progress-bar-bg-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: bold;
+        font-size: 14px;
+        z-index: 0;
       }
 
-      /* Progress Indicator */
-      .progress-indicator {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        border-radius: 0.75rem;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        display: none;
-      }
-
-      .progress-indicator.visible {
+      /* Game over GIF styles */
+      .gameover-gif {
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
         display: block;
-      }
-
-      .progress-text {
-        color: white;
-        font-size: 0.875rem;
-        text-align: center;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .header h1 {
-          font-size: 2rem;
-        }
-
-        .card-header {
-          padding: 1.5rem;
-        }
-
-        .card-title {
-          font-size: 1.5rem;
-        }
-
-        .card-content {
-          padding: 1.5rem;
-        }
-
-        .end-screen {
-          padding: 2rem;
-        }
-
-        .end-title {
-          font-size: 2rem;
-        }
-      }
-
-      /* Hidden utility class */
-      .hidden {
-        display: none !important;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       }
     </style>
   </head>
@@ -390,12 +70,18 @@
     <div class="container">
       <!-- Header -->
       <div class="header">
-        <h1>Choose Your Own Adventure</h1>
-        <p>Make your choices wisely...</p>
+        <h1>Missió: /El PART</h1>
+        <p>
+          La teva parella comença a notar que això ja arriba 👼🏼. Després de 9
+          mesos llegint llibres, mirant vídeos, escoltant podcasts...ha arribat
+          l'hora de la veritat 🤘🏼. Seràs capaç d'aconseguir presenciar
+          l'arribada al món de la teva descendècia? Recordaràs tote el que has
+          après i ho podràs aplicar?
+        </p>
       </div>
 
       <!-- Loading State -->
-      <div id="loading" class="loading">Loading adventure...</div>
+      <div id="loading" class="loading">Carregant adventura...</div>
 
       <!-- Error State -->
       <div id="error" class="error-box hidden">
@@ -419,41 +105,23 @@
         </button>
       </div>
 
-      <!-- Progress Indicator -->
-      <div id="progress" class="progress-indicator">
-        <div class="progress-text" id="progress-text"></div>
-      </div>
-
-      <!-- Inventory -->
-      <div id="inventory" class="inventory">
-        <div class="inventory-header">
-          <svg
-            class="inventory-icon"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-            ></path>
-          </svg>
-          <span>Inventory</span>
-        </div>
-        <div id="inventory-items" class="inventory-items"></div>
-      </div>
-
       <!-- Story Card -->
       <div id="card" class="card">
         <div class="card-header">
           <h2 id="card-title" class="card-title"></h2>
         </div>
         <div class="card-content">
+          <!-- Game Over GIF (shown when card has gif_url) -->
+          <img
+            id="gameover-gif"
+            class="gameover-gif hidden"
+            src=""
+            alt="Game Over"
+          />
+
           <p id="card-text" class="card-text"></p>
           <div id="choices-container">
-            <div class="choices-label">Choose your action:</div>
+            <div class="choices-label">I ara què fas?</div>
             <div id="choices" class="choices"></div>
           </div>
         </div>
@@ -463,10 +131,6 @@
       <div id="end-screen" class="end-screen">
         <h2 id="end-title" class="end-title"></h2>
         <p id="end-message" class="end-message"></p>
-        <div id="end-inventory" class="end-inventory hidden">
-          <p class="end-inventory-label">Items collected:</p>
-          <div id="end-inventory-items" class="end-inventory-items"></div>
-        </div>
         <button class="btn-primary" onclick="restartGame()">
           <svg
             class="icon"
@@ -481,8 +145,21 @@
               d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
             ></path>
           </svg>
-          Play Again
+          Tornar a jugar
         </button>
+      </div>
+
+      <!-- Progress Bar (shown above restart button) -->
+      <div id="progress-bar" class="progress-bar-container hidden">
+        <div class="progress-bar-wrapper">
+          <div
+            id="progress-bar-fill"
+            class="progress-bar-fill"
+            style="width: 0%"
+          >
+            <span id="progress-bar-text" class="progress-bar-text">0%</span>
+          </div>
+        </div>
       </div>
 
       <!-- Restart Footer (shown during gameplay) -->
@@ -501,7 +178,7 @@
               d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
             ></path>
           </svg>
-          Restart Game
+          Restart
         </button>
       </div>
     </div>
@@ -510,30 +187,25 @@
       // Game state
       let gameData = [];
       let currentCardIndex = 0;
-      let inventory = [];
       let gameState = "playing"; // playing, gameover, victory
 
       // DOM elements
       const loadingEl = document.getElementById("loading");
       const errorEl = document.getElementById("error");
       const errorMessageEl = document.getElementById("error-message");
-      const progressEl = document.getElementById("progress");
-      const progressTextEl = document.getElementById("progress-text");
-      const inventoryEl = document.getElementById("inventory");
-      const inventoryItemsEl = document.getElementById("inventory-items");
       const cardEl = document.getElementById("card");
       const cardTitleEl = document.getElementById("card-title");
       const cardTextEl = document.getElementById("card-text");
+      const gameoverGifEl = document.getElementById("gameover-gif");
       const choicesContainerEl = document.getElementById("choices-container");
       const choicesEl = document.getElementById("choices");
       const endScreenEl = document.getElementById("end-screen");
       const endTitleEl = document.getElementById("end-title");
       const endMessageEl = document.getElementById("end-message");
-      const endInventoryEl = document.getElementById("end-inventory");
-      const endInventoryItemsEl = document.getElementById(
-        "end-inventory-items"
-      );
       const restartFooterEl = document.getElementById("restart-footer");
+      const progressBarEl = document.getElementById("progress-bar");
+      const progressBarFillEl = document.getElementById("progress-bar-fill");
+      const progressBarTextEl = document.getElementById("progress-bar-text");
 
       // Initialize game on page load
       window.addEventListener("DOMContentLoaded", initializeGame);
@@ -561,7 +233,6 @@
           }
 
           // Reset game state
-          inventory = [];
           gameState = "playing";
           currentCardIndex = 0;
 
@@ -569,8 +240,7 @@
           hideLoading();
           hideError();
           hideEndScreen();
-          updateInventoryDisplay();
-          updateProgressDisplay();
+          updateProgressBar();
           renderCard(gameData[currentCardIndex]);
           showRestartFooter();
         } catch (error) {
@@ -590,6 +260,14 @@
 
         cardTitleEl.textContent = card.title;
         cardTextEl.textContent = card.text;
+
+        // Show GIF if card has gif_url (for game over cards)
+        if (card.gif_url) {
+          gameoverGifEl.src = card.gif_url;
+          gameoverGifEl.classList.remove("hidden");
+        } else {
+          gameoverGifEl.classList.add("hidden");
+        }
 
         // Clear previous choices
         choicesEl.innerHTML = "";
@@ -614,19 +292,7 @@
           const button = document.createElement("button");
           button.className = "choice-button";
           button.onclick = () => handleChoice(answer);
-
-          // Add choice text
-          button.appendChild(document.createTextNode(answer.text));
-
-          // Add reward indicator if present
-          if (answer.reward && answer.reward.item) {
-            const rewardSpan = document.createElement("span");
-            rewardSpan.className = "choice-reward";
-            rewardSpan.textContent =
-              " ✨ +" + formatItemName(answer.reward.item);
-            button.appendChild(rewardSpan);
-          }
-
+          button.textContent = answer.text;
           choicesEl.appendChild(button);
         });
 
@@ -638,16 +304,12 @@
        * Handle player choice selection
        */
       function handleChoice(answer) {
-        // Add reward item to inventory if present
-        if (answer.reward && answer.reward.item) {
-          inventory.push(answer.reward.item);
-          updateInventoryDisplay();
-        }
-
         // Handle outcome
-        if (answer.outcome === "gameover") {
-          // Navigate to the gameover card
-          const gameOverCard = gameData.find((card) => card.id === "gameover");
+        if (answer.outcome && answer.outcome.startsWith("gameover")) {
+          // Find the correct gameover card by ID
+          const gameOverCard = gameData.find(
+            (card) => card.id === answer.outcome
+          );
           if (gameOverCard) {
             currentCardIndex = gameData.indexOf(gameOverCard);
             renderCard(gameOverCard);
@@ -665,20 +327,20 @@
           currentCardIndex++;
 
           // Check if we've reached the end
-          if (
-            currentCardIndex >= gameData.length ||
-            gameData[currentCardIndex].id === "gameover"
-          ) {
+          const nonGameoverCards = gameData.filter(
+            (card) => !card.id.startsWith("gameover")
+          );
+          if (currentCardIndex >= nonGameoverCards.length) {
             // Player has completed all cards successfully!
             gameState = "victory";
             showEndScreen(
               "victory",
-              "🎉 Victory!",
-              "Congratulations! You successfully supported your partner through the entire childbirth process. Your patience, empathy, and preparation made all the difference. Welcome to parenthood!"
+              "🎉 Victòria! 👼🏼",
+              "Felicitats no només has aconseguit estar present al naixement sinó que a sobre has sigut un punt de suport clau perquè la teva parella passés una experiència de part el mínim problemàtica possible. Ole tu, cal estar ben informat per fer-ho el millor possible."
             );
           } else {
             // Render next card
-            updateProgressDisplay();
+            updateProgressBar();
             renderCard(gameData[currentCardIndex]);
           }
         }
@@ -689,72 +351,27 @@
        */
       function showEndScreen(type, title, message) {
         hideCard();
-        hideRestartFooter();
-        hideProgress();
-
         endTitleEl.textContent = title;
-        endTitleEl.className = "end-title " + type;
         endMessageEl.textContent = message;
-
-        // Show collected items if any
-        if (inventory.length > 0) {
-          endInventoryEl.classList.remove("hidden");
-          endInventoryItemsEl.innerHTML = "";
-          inventory.forEach((item) => {
-            const itemEl = document.createElement("span");
-            itemEl.className = "end-inventory-item";
-            itemEl.textContent = formatItemName(item);
-            endInventoryItemsEl.appendChild(itemEl);
-          });
-        } else {
-          endInventoryEl.classList.add("hidden");
-        }
-
         endScreenEl.classList.add("visible");
       }
 
       /**
-       * Update inventory display
+       * Update progress bar
        */
-      function updateInventoryDisplay() {
-        if (inventory.length > 0) {
-          inventoryEl.classList.add("visible");
-          inventoryItemsEl.innerHTML = "";
-          inventory.forEach((item) => {
-            const itemEl = document.createElement("span");
-            itemEl.className = "inventory-item";
-            itemEl.textContent = formatItemName(item);
-            inventoryItemsEl.appendChild(itemEl);
-          });
-        } else {
-          inventoryEl.classList.remove("visible");
-        }
-      }
-
-      /**
-       * Update progress display
-       */
-      function updateProgressDisplay() {
+      function updateProgressBar() {
         // Count total non-gameover cards
         const totalCards = gameData.filter(
-          (card) => card.id !== "gameover"
+          (card) => !card.id.startsWith("gameover")
         ).length;
         const currentProgress = currentCardIndex + 1;
+        const percentage = Math.round((currentProgress / totalCards) * 100);
 
         if (currentProgress <= totalCards) {
-          progressTextEl.textContent = `Card ${currentProgress} of ${totalCards}`;
-          progressEl.classList.add("visible");
+          progressBarFillEl.style.width = percentage + "%";
+          progressBarTextEl.textContent = percentage + "%";
+          progressBarEl.classList.remove("hidden");
         }
-      }
-
-      /**
-       * Format item name for display (convert snake_case to Title Case)
-       */
-      function formatItemName(item) {
-        return item
-          .split("_")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ");
       }
 
       /**
@@ -796,14 +413,6 @@
 
       function showRestartFooter() {
         restartFooterEl.classList.remove("hidden");
-      }
-
-      function hideRestartFooter() {
-        restartFooterEl.classList.add("hidden");
-      }
-
-      function hideProgress() {
-        progressEl.classList.remove("visible");
       }
     </script>
   </body>

@@ -1,170 +1,155 @@
 [
   {
     "id": "card1",
-    "title": "Arrival at the Hospital",
-    "text": "You and your partner have just arrived at the maternity ward. The nurse asks if you remembered to bring the hospital paperwork.",
+    "title": "Crec que he trencat aigües...",
+    "text": "Bum. La frase. I just ara que estaveu entrant a l'Abacus a comprar aquell llibre que acaba de sortir del teu autor preferit. La mires i efectivament la secció de jocs de taula ara sembla la secció de natació sincronitzada.",
     "answers": [
       {
-        "text": "Calmly check your bag and hand over the paperwork.",
+        "text": "Amb calma i tranquil·litat aneu a casa i agafeu la bossa que ja estava preparada amb roba de recanvi i la robeta de bebé. Mentre ella es dutxa truques el número del taxista que ja estava avisat de feia setmanes i et diu que en 10 minuts està sota de casa.",
         "outcome": "continue",
         "reward": {
-          "item": "nurse_trust"
+          "item": "Calma en mig de les onades"
         }
       },
       {
-        "text": "Panic and insist the nurse should have it already.",
-        "outcome": "gameover"
+        "text": "Entres en pànic fort. Comences a cridar 'Ha roto aguas! !¿Hay algun doctor en el Abacus?! Comences a hiperventilar mentre la teva parella t'intenta calmar i acabes desmaiant-te'",
+        "outcome": "gameover1"
       }
     ]
   },
   {
     "id": "card2",
-    "title": "Supporting Breathing",
-    "text": "Your partner is starting to feel stronger contractions. The nurse asks you to help guide breathing.",
+    "title": "Arribada a l'hospital",
+    "text": "La teva parella i tu arribeu a l'hospital i a recepció et demanen la targeta sanitària, el pla de part i els papers genèrics que calen. Agafes la bossa i...",
     "answers": [
       {
-        "text": "Gently follow the nurse’s demonstration and encourage slow breaths.",
+        "text": "A la carpeta amb tots els papers només hi ha la teva col·lecció de cromos de National Geographic i enlloc de la Cat Salut només portes el carnet de sòcia de l'Abacus de la teva parella. Amb tot el morro del món preguntes si això serveix i rius incòmode.",
+        "outcome": "gameover2"
+      },
+      {
+        "text": "Molt amablament dones els papers que tens ordenats alfabèticament i cromàticament a la carpeta. Li fas una mica de burocràciaSplaining a la recepcionista explicant-li quins papers t'ha de tornar firmats i quins s'ha de quedar. Tot és meravellós i entreu a l'hospital!",
         "outcome": "continue",
         "reward": {
           "item": "breathing_technique_knowledge"
         }
-      },
-      {
-        "text": "Tell your partner to 'just relax' without offering real support.",
-        "outcome": "gameover"
       }
     ]
   },
   {
     "id": "card3",
-    "title": "Communicating with the Nurse",
-    "text": "Your partner asks you to notify the nurse that contractions are closer together.",
+    "title": "Tacte vaginal!",
+    "text": "La llevadora li fa un primer tacte a la teva parella. Mala sort diu que encara no ha dilatat prou i que us heu de quedar a fora esperant o anar a casa, fer-vos una dutxa i tornar. La teva parella et mira suplicant, diu que té contraccions molt fortes i amb prou feines es pot moure.",
     "answers": [
       {
-        "text": "Go politely and clearly explain the contraction timing to the nurse.",
-        "outcome": "continue",
-        "reward": {
-          "item": "nurse_communication_skill"
-        }
+        "text": "La teva parella no pot més i et demana que parlis tu. Insisteixes a la llevadora dient que a la família de la teva parella es dilata molt ràpidament i que sisplau s’esperi una mica. S'espera 5 minuts i efectivament la cosa ja està en marxa!!! Ben fet!",
+        "outcome": "continue"
       },
       {
-        "text": "Yell down the hall for the nurse to hurry.",
-        "outcome": "gameover"
+        "text": "Malgrat la teva parella no pot més fas cas a la llevadora, per això és la seva feina, no? Però amb prou feines arribeu a la sala d'espera que la teva parella es queda clavada, així que torneu a entrar i se l'emporten ràpidament i efecivament està ja de part, tot va rapidíssim i arribes just a la sala de parts que ja està sortint la teva filla.",
+        "outcome": "gameover3"
       }
     ]
   },
   {
     "id": "card4",
-    "title": "Comfort Options",
-    "text": "Your partner seems tense and uncomfortable. The nurse offers several comfort items.",
+    "title": "Suport emocional i massatges!",
+    "text": "Us fan entrar  a la sala de parts i les contraccions es fan més intenses. La teva parella et demana que posis en pràctica els aprenentatges!",
     "answers": [
       {
-        "text": "Ask your partner whether they'd like a warm blanket or back rub.",
-        "outcome": "continue",
-        "reward": {
-          "item": "comfort_item"
-        }
+        "text": "Treus el teu altaveu bluetooth i poses la cançó de Papaoutai d'Stromae i fas la teva rutina de ball que has après a les classes de Hip Hop al Centre Cívic de Torre Baró.",
+        "outcome": "gameover4"
       },
       {
-        "text": "Decide for them and push a position they don't want.",
-        "outcome": "gameover"
+        "text": "Treus el teu altaveu bluetooth i poses la llista que havíeu preparat de música instrumental tranqui.També et porten olis essencials i la sala de parts es torna un lloc super amable i d'spa. Fas massatges suaus a les lumbars de la teva parella i això fa que tot passi més ràpid.",
+        "outcome": "continue"
       }
     ]
   },
   {
     "id": "card5",
-    "title": "Contraction Timing",
-    "text": "The nurse asks you to keep track of contraction intervals.",
+    "title": "Epidural o no epidural, esa es la cuestión",
+    "text": "Al pla de part havíeu posat que res d'epidural però la teva parella et diu que les contraccions li fan molt de mal i que ara sí que la vol.",
     "answers": [
       {
-        "text": "Use your phone timer to log times carefully.",
-        "outcome": "continue",
-        "reward": {
-          "item": "contraction_timing_knowledge"
-        }
+        "text": "Cas absolut, tu ets el traductor de les seves paraules i qualsevol cosa es pot adaptar sobre la marxa si cal. La idea prèvia del part pot ser que hagi de canviar i no passa res sempre que tothom hi estigui d'acord.",
+        "outcome": "continue"
       },
       {
-        "text": "Guess the timing and say 'I think they're close enough.'",
-        "outcome": "gameover"
+        "text": "Et plantes i dius que a sobre que us vau passar hores fent el pla de part ara no pot ser que se'l passi pel forro!",
+        "outcome": "gameover5"
       }
     ]
   },
   {
     "id": "card6",
-    "title": "Pain Relief Discussion",
-    "text": "Your partner is considering an epidural. They ask what you think.",
+    "title": "Informem a la família?",
+    "text": "Massa whatsapps sense resposta fan que la família et comenci a trucar. El mòbil de la teva parella està apagat i tu ets la 'centralita'.",
     "answers": [
       {
-        "text": "Stay supportive and reassure that any choice they make is valid.",
-        "outcome": "continue",
-        "reward": {
-          "item": "emotional_support_skill"
-        }
+        "text": "Malgrat la teva parella ja està amb l'epidural i dilatada decideixies que és bona idea posar-te a respondre missatges i a fer àudios informant del minuto y resultado del part.",
+        "outcome": "gameover6"
       },
       {
-        "text": "Make the decision for them because 'you know what's best.'",
-        "outcome": "gameover"
+        "text": "Prèviament ja havíeu parlat amb la família de com informaríeu: ja sigui fer un grup de whatsapp, o un àudio cada x temps. El que sigui però que la teva parella estigui còmode i sense pressió. No hi ha pressa. I si no es vol dir res fins que hagi nascut, doncs també està bé.",
+        "outcome": "continue"
       }
     ]
   },
   {
     "id": "card7",
-    "title": "Encouraging Through Labor",
-    "text": "Your partner is exhausted and needs encouragement while pushing.",
+    "title": "Les rondes d'esponderaments (aka pujos en espanyol)",
+    "text": "La cosa ja està intensa i tot està en marxa. Cada cop l'equip mèdic ve més sovint a fer tactes i demanen a la teva parella que comenci a fer força.",
     "answers": [
       {
-        "text": "Offer steady words of strength and hold their hand.",
-        "outcome": "continue",
-        "reward": {
-          "item": "partner_support_presence"
-        }
+        "text": "Estàs al seu costat tota l'estona agafant-li la mà i, tal i com havíeu après, l'ajudes amb les respiracions. Mires en tot moment que l'equip mèdic expliqui tots els passos per evitar possible violència obstètrica involuntària.",
+        "outcome": "continue"
       },
       {
-        "text": "Tell them they're taking too long and they need to push harder.",
-        "outcome": "gameover"
+        "text": "L'equip mèdic et diu que el cap està col·locat d'una manera que no surt. Així que us indiquen que el més sa seria fer una cessària per evitar problemes. Us ho praleu amb la teva parella que ja la veus fosa i que et demana que si, que fem cessària.",
+        "outcome": "continue"
       }
     ]
   },
   {
-    "id": "card8",
-    "title": "Nurse Request",
-    "text": "The nurse asks you to grab some ice chips from the nearby station.",
-    "answers": [
-      {
-        "text": "Quickly retrieve the ice chips and bring them back.",
-        "outcome": "continue",
-        "reward": {
-          "item": "ice_chips"
-        }
-      },
-      {
-        "text": "Refuse because you're 'too stressed right now.'",
-        "outcome": "gameover"
-      }
-    ]
+    "id": "gameover1",
+    "title": "❌ Game Over per desmai del Player 1",
+    "text": "El teu desmai fa que els dependents de l'Abacus hagin de trucar a 2 ambulàncies. El teu fill neix perfectament mentre tu segueixes catatònic a l'habitació d'urgències dps pisos per sobre d'on la teva parella descansa després d'un part ràpid i quasi indolor de 27 hores.",
+    "gif_url": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWh1MWplb2dvNnB6enE3c2F1cmxvampzMjlwNHhzcnd0cGtlempodiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FY8c5SKwiNf1EtZKGs/giphy.gif",
+    "answers": []
   },
   {
-    "id": "card9",
-    "title": "Final Delivery Support",
-    "text": "It’s the final moments. Your partner needs focused encouragement and calm presence.",
-    "answers": [
-      {
-        "text": "Stay close, maintain eye contact, and reinforce their strength.",
-        "outcome": "continue",
-        "reward": {
-          "item": "delivery_focus_skill"
-        }
-      },
-      {
-        "text": "Start filming without asking and distract everyone.",
-        "outcome": "gameover"
-      }
-    ]
+    "id": "gameover2",
+    "title": "❌ Game Over per 'derrota burrocràtica'",
+    "text": "A recepció et diuen que se la queden a la teva parella però que tu tens 30 minuts per anar a buscar els papers a casa. Truques a la teva sogra que ja està de camí i quan arriba marxes i gràcies a les teves Roller Shoes vas i tornes en 20 minuts. El problema? que el part ha anat super ràpid i te l'has perdut. La teva parella dorm amb un somriure de felicitat però la teva sogra et mira i fa que no amb desaprovació.",
+    "gif_url": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWhhMTJwd29hcGxoZnRuajFiOXZtaWUxZzFlYjEzM3k4Y3I5anJodCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/byGsNfk0bVRMA/giphy.gif",
+    "answers": []
   },
   {
-    "id": "gameover",
-    "title": "Game Over",
-    "text": "Sorry you are kindly asked to leave the birth room",
+    "id": "gameover3",
+    "title": "❌ Game Over per Llevadora que no escolta i va amb el pilot automàtic perquè porta 24 hores de torn.",
+    "text": "Els torns interminables dels sanitaris són una vergonya. No només estan infrapagats sinó que a sobre se'ls drena tota l'energia. Això provoca que no puguin atendre al 100% tots els pacients i necessitin estandarditzar el procés. Sanitaris necessaris. País de vergonya.",
+    "gif_url": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2Z3NnkzNDU1bWp2bG1xYjI1MjlnYWVpdXhyc2RneWdsejUzZnA0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9Ai5dIk8xvBm0/giphy.gif",
+    "answers": []
+  },
+  {
+    "id": "gameover4",
+    "title": "❌ Game Over per massa flow en el moment inadecuat.",
+    "text": "Tota la planta de paritoris flipen amb les teves skills de ball i s'acaba formant una mena de competició de break dance mentre de fons es va sentint com neixen els nens i nenes. Un dels naixements és el del teu fill que surt fent footwork de break dance i acaba amb un Baby freeze. Tothom aplaudeix i els vídeos es tornen virals però tu t'has perdut el naixement.",
+    "gif_url": "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTczeDFpZzIwd2Zwa3lxbHN1dzZrbW81ZmcwdWNhbWl6YnhjcngyaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Xdcj75alQutVe/giphy.gif",
+    "answers": []
+  },
+  {
+    "id": "gameover5",
+    "title": "❌ Game Over per estupidesa màxima",
+    "text": "Chill bro. El part és una cosa super rara que no sempre va segons el pla. Si la teva parella vol epidural és perquè la necessita i punt. No siguis tossut i escolta-la. Sempre, en tot. En aquest procés tu no manes, només ajudes. Al final la teva parella aconsegueix fer-te entrar en raó i que li posin l'epidural, tu no veus el part perquè estàs massa entretingut discutint amb el doctor per no haver fet cas al pla de part. Que loser.",
+    "gif_url": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmRqNzE1aTRybTFkdjgyZ21lMTdxZWtoa3Z6ZnFneHZsMGZhYW1maCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/piTERt2CEdrLt2WLv0/giphy.gif",
+    "answers": []
+  },
+  {
+    "id": "gameover6",
+    "title": "❌ Game Over per síndrome de 324.",
+    "text": "Mentre responies missatges ha nascut el teu fill, així pim pam sense avisar. Has sortir un moment de la sala de parts perquè no tenies prou cobertura i en tornar ja t'has trobat a la teva parella donant el pit per primera vegada. Família i amics, tranquis que quan s'hagi d'avisar s'avisarà.",
+    "gif_url": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmp0OW42MGlwZTgzMWt2amN5cWZnMnRjYnc0YTd3N3Z4M2Z0NjBobiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/A45LCRGb84xTG/giphy.gif",
     "answers": []
   }
 ]
